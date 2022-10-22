@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @input_form %>
+
+<div>
+  <%= link_to "Edit this input form", edit_input_form_path(@input_form) %> |
+  <%= link_to "Back to input forms", input_forms_path %>
+
+  <%= button_to "Destroy this input form", @input_form, method: :delete %>
+</div>

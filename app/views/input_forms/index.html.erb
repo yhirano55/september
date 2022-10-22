@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Input forms</h1>
+
+<div id="input_forms">
+  <% @input_forms.each do |input_form| %>
+    <%= render input_form %>
+    <p>
+      <%= link_to "Show this input form", input_form %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New input form", new_input_form_path %>
