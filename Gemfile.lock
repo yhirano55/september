@@ -227,6 +227,10 @@ GEM
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.3.0)
+    view_component (2.74.1)
+      activesupport (>= 5.0.0, < 8.0)
+      concurrent-ruby (~> 1.0)
+      method_source (~> 1.0)
     webrick (1.7.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
@@ -252,6 +256,7 @@ DEPENDENCIES
   standard
   stimulus-rails
   turbo-rails
+  view_component (~> 2.74)
 
 RUBY VERSION
    ruby 3.1.2p20

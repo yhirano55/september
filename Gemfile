@@ -14,6 +14,7 @@ gem "stimulus-rails"
 gem "cssbundling-rails"
 gem "bootsnap", require: false
 gem "good_job", "~> 3.5"
+gem "view_component", "~> 2.74"
 
 group :development, :test do
   gem "debug"
