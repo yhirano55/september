@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render Element::HeadlineComponent.new(text: InputForm.model_name.human) %>
+<%= render(Primer::Beta::Heading.new(tag: :h1)) { InputForm.model_name.human } %>
 
 <div id="input_forms">
   <% @input_forms.each do |input_form| %>
@@ -11,4 +11,4 @@
   <% end %>
 </div>
 
-<%= link_to "New input form", new_input_form_path, class: 'text-center block mt-10 py-3 px-5 rounded bg-sky-500 text-white text-lg' %>
+<%= render(Primer::Beta::Button.new(tag: :a, href: new_input_form_path, block: :true)) { "New input form" } %>

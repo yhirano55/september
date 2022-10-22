@@ -1,10 +1,6 @@
-<%= render Element::HeadlineComponent.new(text: 'Editing input form') %>
+<%= render(Primer::Beta::Heading.new(tag: :h1)) { "Editing input form" } %>
 
 <%= render "form", input_form: @input_form %>
 
-<br>
-
-<div>
-  <%= link_to "Show this input form", @input_form %> |
-  <%= link_to "Back to input forms", input_forms_path %>
-</div>
+<%= render(Primer::Beta::Button.new(tag: :a, href: input_form_path(@input_form), block: :true)) { "Show this input form" } %>
+<%= render(Primer::Beta::Button.new(tag: :a, href: input_forms_path, block: :true)) { "Back to input forms" } %>
