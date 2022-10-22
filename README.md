@@ -10,6 +10,6 @@ cp .env.sample .env
 cp .envrc.sample .envrc
 direnv allow .
 
-dip compose up -d db redis
+dip compose up -d db
 hivemind Procfile.dev
 ```
