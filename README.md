@@ -11,5 +11,5 @@ cp .envrc.sample .envrc
 direnv allow .
 
 dip compose up -d db
-hivemind Procfile.dev
+bin/dev
 ```
