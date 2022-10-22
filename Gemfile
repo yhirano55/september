@@ -17,4 +17,5 @@ gem "bootsnap", require: false
 group :development, :test do
   gem "debug"
   gem "standard"
+  gem "rspec-rails"
 end
