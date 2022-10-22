@@ -103,6 +103,18 @@
   resolved "https://registry.yarnpkg.com/@primer/behaviors/-/behaviors-1.3.0.tgz#148fb2eab6502bded0858453e2c494506e4bc367"
   integrity sha512-odndV9KERhRBRGA0Ir+kdr2CNYf6JzBvJ3Ne2Zj7pMMQox2713ME11Uw3JCYyt1STPxKtZqX2RrRcnZRbJRoKw==
 
+"@primer/css@^20.4.8":
+  version "20.4.8"
+  resolved "https://registry.yarnpkg.com/@primer/css/-/css-20.4.8.tgz#d0b07d66f5226977cdbb44e710190b5496d6ce8d"
+  integrity sha512-dMqc1iG3Aq1vfAiOMJMmY2QipfVpDM+B+PJPT/2GzXIKXN0VgAfxj77zfnu5a60qGXsBE7Rfk3YPGtmHOhxE1Q==
+  dependencies:
+    "@primer/primitives" "^7.9.0"
+
+"@primer/primitives@^7.9.0":
+  version "7.10.0"
+  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-7.10.0.tgz#de0d9648d484184442583564f02d6600b872fa5f"
+  integrity sha512-DdLHq21e93R9qDHyRuRpytBLY0Up9IwNWMOUgPNW6lRSng4N4+IdUlLS3Ekbasmxfs8Z8vKS8aezeYovQ5qsxQ==
+
 "@primer/view-components@^0.0.104":
   version "0.0.104"
   resolved "https://registry.yarnpkg.com/@primer/view-components/-/view-components-0.0.104.tgz#5e7776f98870e8ce8420b827a4cc2eb29663e538"
