@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   mount GoodJob::Engine => "good_job"
+
+  if Rails.env.development?
+    mount Lookbook::Engine, at: "/lookbook"
+  end
 end
