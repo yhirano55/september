@@ -16,6 +16,7 @@ gem "bootsnap", require: false
 gem "good_job", "~> 3.5"
 gem "view_component", "~> 2.74"
 gem "lookbook"
+gem "primer_view_components"
 
 group :development, :test do
   gem "debug"
