@@ -38,6 +38,12 @@ jobs:
           node-version: '18.11.0'
           cache: 'yarn'
 
+      - name: yarn install
+        run: yarn
+
+      - name: assets precompile
+        run: bin/rails assets:precompile
+
       - name: Setup database
         run: bundle exec rails db:create db:schema:load --trace
 
