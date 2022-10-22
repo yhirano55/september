@@ -18,4 +18,6 @@ group :development, :test do
   gem "debug"
   gem "standard"
   gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem "faker"
 end
