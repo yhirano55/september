@@ -66,12 +66,16 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     bootsnap (1.13.0)
       msgpack (~> 1.2)
     builder (3.2.4)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
+    css_parser (1.12.0)
+      addressable
     cssbundling-rails (1.1.1)
       railties (>= 6.0.0)
     debug (1.6.2)
@@ -88,6 +92,7 @@ GEM
       railties (>= 5.0.0)
     faker (2.23.0)
       i18n (>= 1.8.11, < 2)
+    ffi (1.15.5)
     fugit (1.7.1)
       et-orbi (~> 1, >= 1.2.7)
       raabro (~> 1.4)
@@ -101,6 +106,8 @@ GEM
       railties (>= 6.0.0)
       thor (>= 0.14.1)
       webrick (>= 1.3)
+    htmlbeautifier (1.4.2)
+    htmlentities (4.3.4)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     io-console (0.5.11)
@@ -109,9 +116,25 @@ GEM
     jsbundling-rails (1.0.3)
       railties (>= 6.0.0)
     json (2.6.2)
+    listen (3.7.1)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
+    lookbook (1.2.1)
+      actioncable
+      activemodel
+      css_parser
+      htmlbeautifier (~> 1.3)
+      htmlentities (~> 4.3.4)
+      listen (~> 3.0)
+      railties (>= 5.0)
+      redcarpet (~> 3.5)
+      rouge (>= 3.26, < 5.0)
+      view_component (~> 2.0)
+      yard (~> 0.9.25)
+      zeitwerk (~> 2.5)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (1.0.2)
@@ -134,6 +157,7 @@ GEM
     parser (3.1.2.1)
       ast (~> 2.4.1)
     pg (1.4.4)
+    public_suffix (5.0.0)
     puma (5.6.5)
       nio4r (~> 2.0)
     raabro (1.4.0)
@@ -169,10 +193,15 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
+    rb-fsevent (0.11.2)
+    rb-inotify (0.10.1)
+      ffi (~> 1.0)
+    redcarpet (3.5.1)
     regexp_parser (2.6.0)
     reline (0.3.1)
       io-console (~> 0.5)
     rexml (3.2.5)
+    rouge (4.0.0)
     rspec-core (3.11.0)
       rspec-support (~> 3.11.0)
     rspec-expectations (3.11.1)
@@ -227,10 +256,16 @@ GEM
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.3.0)
+    view_component (2.74.1)
+      activesupport (>= 5.0.0, < 8.0)
+      concurrent-ruby (~> 1.0)
+      method_source (~> 1.0)
     webrick (1.7.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    yard (0.9.28)
+      webrick (~> 1.7.0)
     zeitwerk (2.6.1)
 
 PLATFORMS
@@ -244,6 +279,7 @@ DEPENDENCIES
   faker
   good_job (~> 3.5)
   jsbundling-rails
+  lookbook
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4)
@@ -252,6 +288,7 @@ DEPENDENCIES
   standard
   stimulus-rails
   turbo-rails
+  view_component (~> 2.74)
 
 RUBY VERSION
    ruby 3.1.2p20
