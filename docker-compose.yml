@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  db:
+    image: postgres:15-alpine
+    command: |
+      postgres -c log_destination=stderr -c log_statement=all -c log_connections=on -c log_disconnections=on
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: password
+
+volumes:
+  pg_data:
+    driver: local

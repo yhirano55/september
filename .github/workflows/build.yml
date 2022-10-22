@@ -1,0 +1,43 @@
+---
+name: Build
+
+on:
+  - pull_request
+
+env:
+  CI: true
+  RAILS_ENV: test
+  BUNDLE_JOBS: 4
+  BUNDLE_RETRY: 3
+  BUNDLE_PATH: vendor/bundle
+  BUNDLE_CLEAN: true
+  DATABASE_URL: "postgres://postgres:password@127.0.0.1"
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_PASSWORD: password
+        ports:
+          - 5432:5432
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1.2
+          bundler-cache: true
+
+      - name: Setup database
+        run: bundle exec rails db:create db:schema:load --trace
+
+      - name: Run standard
+        run: bundle exec standardrb
+
+      - name: Run test
+        run: bundle exec rspec
