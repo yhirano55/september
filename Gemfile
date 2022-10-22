@@ -11,11 +11,12 @@ gem "puma"
 gem "jsbundling-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
-gem "cssbundling-rails"
+gem "dartsass-rails"
 gem "bootsnap", require: false
 gem "good_job", "~> 3.5"
 gem "view_component", "~> 2.74"
 gem "lookbook"
+gem "primer_view_components", require: "primer/view_components/engine"
 
 group :development, :test do
   gem "debug"
