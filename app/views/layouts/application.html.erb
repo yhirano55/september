@@ -7,11 +7,12 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "primer_view_components", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body class="bg-indigo-300">
-    <div class="container bg-slate-50 rounded mx-auto my-10 p-10">
+  <body>
+    <div class="container-sm">
       <%= yield %>
     </div>
   </body>
