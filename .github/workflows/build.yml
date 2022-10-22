@@ -38,3 +38,6 @@ jobs:
 
       - name: Run standard
         run: bundle exec standardrb
+
+      - name: Run test
+        run: bundle exec rspec
