@@ -27,6 +27,7 @@ module September
 
     config.active_job.queue_adapter = :good_job
     config.view_component.preview_paths << "#{Rails.root}/spec/components/previews"
+    config.lookbook.page_paths << "#{Rails.root}/spec/components/docs"
 
     config.generators do |g|
       g.assets false
