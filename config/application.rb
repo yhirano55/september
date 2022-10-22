@@ -26,6 +26,7 @@ module September
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.active_job.queue_adapter = :good_job
+    config.view_component.preview_paths << "#{Rails.root}/spec/components/previews"
 
     config.generators do |g|
       g.assets false
