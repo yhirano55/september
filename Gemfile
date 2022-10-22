@@ -13,6 +13,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "cssbundling-rails"
 gem "bootsnap", require: false
+gem "good_job", "~> 3.5"
 
 group :development, :test do
   gem "debug"
