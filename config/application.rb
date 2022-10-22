@@ -32,8 +32,12 @@ module September
     config.generators do |g|
       g.assets false
       g.helper false
+      g.orm :active_record, primary_key_type: :uuid
       g.preview true
-      g.system_tests false
+
+      g.controller_specs false
+      g.routing_specs false
+      g.view_specs false
     end
   end
 end
