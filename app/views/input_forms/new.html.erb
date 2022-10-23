@@ -1,5 +1,7 @@
 <%= render(Primer::Beta::Heading.new(tag: :h1)) { 'New input form' } %>
 
-<%= render "form", input_form: @input_form %>
+<%= primer_form_with(model: @input_form) do |f| %>
+  <%= render InputFormForm.new(f) %>
+<% end %>
 
-<%= render(Primer::Beta::Button.new(tag: :a, href: input_forms_path, block: :true)) { "Back to input forms" } %>
+<%= render(Primer::Beta::Button.new(tag: :a, href: input_forms_path, block: :true, mt: 2)) { "Back to input forms" } %>
