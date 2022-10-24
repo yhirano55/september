@@ -1,7 +1,22 @@
-<p style="color: green"><%= notice %></p>
+<%= render(Primer::Beta::Flash.new(scheme: :success, mb: 3)) { notice } if notice %>
 
-<%= render @input_form %>
+<%= render Primer::Box.new(bg: :subtle, mt: 3, p: 3, id: dom_id(@input_form)) do %>
+  <%= render(Primer::Beta::Heading.new(tag: :h2, mb: 3)) { @input_form.title } %>
+  <%= simple_format @input_form.description %>
+  <p>
+    <strong>Id:</strong>
+    <%= @input_form.id %>
+  </p>
+  <p>
+    <strong>Created at:</strong>
+    <%= l @input_form.created_at %>
+  </p>
+  <p>
+    <strong>Updated at:</strong>
+    <%= l @input_form.updated_at %>
+  </p>
+<% end %>
 
-<%= render(Primer::Beta::Button.new(tag: :a, href: edit_input_form_path(@input_form), block: :true)) { "Edit this input form" } %>
-<%= render(Primer::Beta::Button.new(tag: :a, href: input_forms_path, block: :true)) { "Back to input forms" } %>
-<%= render(Primer::Beta::Button.new(tag: :a, href: input_form_path(@input_form), data: { turbo_method: :delete }, block: :true)) { "Destroy this input form" } %>
+<%= render(Primer::Beta::Button.new(tag: :a, href: edit_input_form_path(@input_form), block: :true, mt: 3)) { "Edit this input form" } %>
+<%= render(Primer::Beta::Button.new(tag: :a, href: input_forms_path, block: :true, mt: 2)) { "Back to input forms" } %>
+<%= render(Primer::Beta::Button.new(tag: :a, href: input_form_path(@input_form), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, scheme: :danger, block: :true, mt: 2)) { "Destroy this input form" } %>
