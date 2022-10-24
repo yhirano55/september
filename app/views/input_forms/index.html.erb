@@ -1,14 +1,33 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render(Primer::Beta::Heading.new(tag: :h1)) { InputForm.model_name.human } %>
+
+<%= render(Primer::Beta::Flash.new(scheme: :success, mt: 3)) { notice } if notice %>
 
 <div id="input_forms">
   <% @input_forms.each do |input_form| %>
-    <%= render input_form %>
-    <p>
-      <%= link_to "Show this input form", input_form %>
-    </p>
+    <%= render Primer::Box.new(bg: :subtle, mt: 3, p: 3, id: dom_id(input_form)) do %>
+      <p>
+        <strong>Id:</strong>
+        <%= input_form.id %>
+      </p>
+      <p>
+        <strong>Title:</strong>
+        <%= input_form.title %>
+      </p>
+      <p>
+        <strong>Description:</strong>
+        <%= input_form.description %>
+      </p>
+      <p>
+        <strong>Created at:</strong>
+        <%= l input_form.created_at %>
+      </p>
+      <p>
+        <strong>Updated at:</strong>
+        <%= l input_form.updated_at %>
+      </p>
+      <%= render(Primer::Beta::Button.new(tag: :a, href: input_form_path(input_form), block: :true)) { "Show this input form" } %>
+    <% end %>
   <% end %>
 </div>
 
-<%= render(Primer::Beta::Button.new(tag: :a, href: new_input_form_path, block: :true)) { "New input form" } %>
+<%= render(Primer::Beta::Button.new(tag: :a, href: new_input_form_path, block: :true, mt: 3)) { "New input form" } %>
